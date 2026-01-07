@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LayoutController;
 
 
 /*
@@ -23,8 +24,17 @@ use App\Http\Controllers\AuthController;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('layout.master');
 });
+
+
+Route::get('home/', [LayoutController::class, 'home'])->name('layout.home');
+Route::get('about/', [LayoutController::class, 'about'])->name('layout.about');
+Route::get('feature/', [LayoutController::class, 'feature'])->name('layout.feature');
+Route::get('pricing/', [LayoutController::class, 'pricing'])->name('layout.pricing');
+Route::get('faq/', [LayoutController::class, 'faq'])->name('layout.faq');
+
+
 
 Route::post('create/', [ClientController::class, 'create'])->name('create');
 Route::get('login', [AuthController::class, 'login'])->name('login');
