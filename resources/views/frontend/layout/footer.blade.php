@@ -11,7 +11,7 @@
 
             <ul class="list-unstyled mb-4">
                 <li>
-                <a href="{{ route('layout.about') }}" class="text-black" style="text-decoration: none;">About us</a>
+                <a href="" class="text-black" style="text-decoration: none;">About us</a>
                 </li>
                 <li>
                 <a href="#!" class="text-black" style="text-decoration: none;">Collections</a>
@@ -86,5 +86,3 @@
         </div>
         <!-- Copyright -->
     </footer>
-
-    </div>

@@ -8,7 +8,7 @@
   </head>
     <body>
         <div class="container">
-        <form action="{{ route('create') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('crud.create') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label class="mt-2">Name <span class="text-danger">*</span></label>

@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <h1>Log in now</h1>
             <div>
-                <a href="{{ route('login') }}" class="btn btn-info" type="submit">
+                <a href="{{ route('auth.login') }}" class="btn btn-info" type="submit">
                     login now
                 </a>
             </div>

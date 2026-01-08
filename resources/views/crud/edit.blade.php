@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-        <form action="{{ route('update', $client->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('crud.update', $client->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <label class="mt-2" >Name</label>
             <input type="text" class="form-control" name="name" value="{{$client->name}}">

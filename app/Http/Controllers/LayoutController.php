@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 class LayoutController extends Controller
 {
-    public function home(){
-        return view('layout.home');
+    public function FrontendHome(){
+        return view('frontend.index');
     }
-    public function about(){
-        return view('layout.about');
+    public function FrontendAbout(){
+        return view('frontend.about');
     }
-    public function feature(){
-        return view('layout.feature');
+    public function FrontendFaq(){
+        return view('frontend.faq');
     }
-    public function pricing(){
-        return view('layout.pricing');
+    public function Frontendfeature(){
+        return view('frontend.feature');
     }
-    public function faq(){
-        return view('layout.faq');
+    public function FrontendPricing(){
+        return view('frontend.pricing');
     }
 }   

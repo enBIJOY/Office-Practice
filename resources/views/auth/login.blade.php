@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-6 my-5">
                 <h1>Login Here:</h1>
-                <form action="{{ route('post.login') }}" method="post">
+                <form action="{{ route('auth.post.login') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label class="mt-2" >Email</label>

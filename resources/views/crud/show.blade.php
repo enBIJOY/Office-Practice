@@ -69,8 +69,8 @@
                         <img src="{{ asset('upp') }}/{{ $client->image }}" height="50" weight="50" alt="Image">
                     </td>
                     <td>
-                        <a class="btn btn-sm btn-primary" href="{{ route('edit', $client->id) }}">Edit</a>
-                        <form action="{{route('client.Delete', $client->id)}}", method="post" style="display: inline;">
+                        <a class="btn btn-sm btn-primary" href="{{ route('crud.edit', $client->id) }}">Edit</a>
+                        <form action="{{route('crud.client.Delete', $client->id)}}", method="post" style="display: inline;">
                             @csrf
                             @method('delete')
                             <button class='btn btn-sm btn-danger' type='submit'>Delete</button>

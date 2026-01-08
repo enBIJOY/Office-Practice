@@ -36,19 +36,19 @@ class ClientController extends Controller
         $client->save();
         
         if($client){
-            return redirect()->route('show')->with('success', 'Client Saved Successfully!');
+            return redirect()->route('crud.show')->with('success', 'Client Saved Successfully!');
         }
     }
 
     public function show(){
         $clients = Client::all();
-        return view('show', compact('clients'));
+        return view('crud.show', compact('clients'));
     }
 
     public function edit($id){
         // dd($request->all);
         $client = Client::find($id);
-        return view ('edit', compact('client'));
+        return view ('crud.edit', compact('client'));
     }
 
     public function update(Request $request, $id){
@@ -81,7 +81,7 @@ class ClientController extends Controller
         }
 
         $client->save();
-        return redirect()->route('show');
+        return redirect()->route('crud.show');
     }
 
     public function clientDelete($id){

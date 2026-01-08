@@ -7,13 +7,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
     <body>
-        <!--header-->
-        @include('layout.header')
-    <!--end header-->
-      
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand">NoThing</a>
+            <form class="d-flex" role="search">
+            </form>
+            <a href="{{ route('auth.login') }}" class="btn btn-primary" type="submit">
+              Login
+            </a>
+            <a href="{{ route('auth.register') }}" class="btn btn-info" type="submit">
+              Registration
+            </a>
+        </div>
+      </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        <!-- Remove the container if you want to extend the Footer to full width. -->
-        @include('layout.footer')
-    <!-- End of .container -->
   </body>
 </html>

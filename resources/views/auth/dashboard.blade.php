@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>post-Login</title>
+    <title>dashboard</title>
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6 my-5">
-                <form action="" method="post">
-                    @csrf
-                    
-                    <a href="{{ route('register') }}" class="btn btn-info" type="submit">
-                        Registration
-                    </a>
-                </form>
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <h1>You are Logged In</h1>
+        </div>
+        <div>
+            <div>
+                <a href="{{ route('auth.logout') }}" class="btn btn-info" type="submit">
+                    logout
+                </a>
             </div>
         </div>
     </div>

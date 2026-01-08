@@ -24,29 +24,32 @@ use App\Http\Controllers\LayoutController;
 
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('frontend.index');
 });
 
 
-Route::get('home/', [LayoutController::class, 'home'])->name('layout.home');
-Route::get('about/', [LayoutController::class, 'about'])->name('layout.about');
-Route::get('feature/', [LayoutController::class, 'feature'])->name('layout.feature');
-Route::get('pricing/', [LayoutController::class, 'pricing'])->name('layout.pricing');
-Route::get('faq/', [LayoutController::class, 'faq'])->name('layout.faq');
+
+// Route::get('home/', [LayoutController::class, 'home'])->name('layout.home');
+Route::get('about/', [LayoutController::class, 'FrontendAbout'])->name('frontend.about');
+Route::get('feature/', [LayoutController::class, 'FrontendFeature'])->name('frontend.feature');
+Route::get('pricing/', [LayoutController::class, 'FrontendPricing'])->name('frontend.pricing');
+Route::get('faq/', [LayoutController::class, 'FrontendFaq'])->name('frontend.faq');
+Route::get('home/', [LayoutController::class, 'FrontendHome'])->name('frontend.index');
 
 
 
-Route::post('create/', [ClientController::class, 'create'])->name('create');
-Route::get('login', [AuthController::class, 'login'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('post.login');
-Route::get('register', [AuthController::class, 'register'])->name('register');
-Route::post('post-register', [AuthController::class, 'postRegistration'])->name('post.register');
-Route::get('show/',[ClientController::class, 'show'])->name('show');
-Route::get('edit/{id}', [ClientController::class, 'edit'])->name('edit');
-Route::post('update/{id}', [ClientController::class, 'update'])->name('update');
-Route::delete('client/delete/{id}', [ClientController::class, 'clientDelete'])->name('client.Delete');
 
-// Route::get('register/', [RegistrationController::class, 'register'])->name('register');
-Route::get('dashboard', [AuthController::class, 'dashboard'])->name('name')->middleware('auth');
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('create/', [ClientController::class, 'create'])->name('crud.create');
+Route::get('show/',[ClientController::class, 'show'])->name('crud.show');
+Route::get('edit/{id}', [ClientController::class, 'edit'])->name('crud.edit');
+Route::post('update/{id}', [ClientController::class, 'update'])->name('crud.update');
+Route::delete('client/delete/{id}', [ClientController::class, 'clientDelete'])->name('crud.client.Delete');
+
+Route::get('login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('auth.post.login');
+Route::get('register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('post-register', [AuthController::class, 'postRegistration'])->name('auth.post.register');
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('auth.dashboard')->middleware('auth');
+Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 

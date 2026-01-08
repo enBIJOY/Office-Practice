@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <h1>Registration Page :</h1>
             <div class="col-6 my-5">
-                <form action="{{ route ('post.register')}}" method="post">
+                <form action="{{ route ('auth.post.register')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label class="mt-2" >name <span class="text-danger">*</span></label>

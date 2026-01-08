@@ -12,10 +12,10 @@ use Hash;
 class AuthController extends Controller
 {
     public function login(){
-        return view('login');
+        return view('auth.login');
     }
     public function register(){
-        return view('register');
+        return view('auth.register');
     }
     public function postLogin(Request $request){
         $request->validate([
@@ -26,7 +26,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard')
+            return redirect()->intended('auth.dashboard')
                         ->withSuccess('You have Logged in Successfully');
         }
         
@@ -49,17 +49,17 @@ class AuthController extends Controller
         $user->save();
         
         if($user){
-            return view("registration-success")->with('Success','Great! registration-success');
+            return view("auth.registration-success")->with('Success','Great! registration-success');
         }
-        return redirect("register")->withSuccess('Try Again Register');
+        return redirect("auth.register")->withSuccess('Try Again Register');
     }
 
     public function dashboard()
     {
       if(Auth::check()){
-        return view('dashboard');
+        return view('auth.dashboard');
       }
-        return redirect("login")->withSuccess('Opps! You do not have access');
+        return redirect("auth.login")->withSuccess('Opps! You do not have access');
     }
 
 
@@ -75,6 +75,6 @@ class AuthController extends Controller
     public function logout() {
         Session::flush();
         Auth::logout();
-        return Redirect('login')->withSuccess('Logout Successfull');
+        return Redirect('auth.login')->withSuccess('Logout Successfull');
     }
 }
