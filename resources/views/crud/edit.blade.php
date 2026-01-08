@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <form action="{{ route('crud.update', $client->id) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <label class="mt-2" >Name</label>
+            <input type="text" class="form-control" name="name" value="{{$client->name}}">
+            <label class="mt-2" >Country</label>
+            <input type="text" class="form-control" name="Country" value="{{$client->Country}}">
+            <label class="mt-2">Email</label>
+            <input type="text" class="form-control" name="email" value="{{$client->email}}">
+            <label class="mt-2">Phone</label>
+            <input type="number" class="form-control" name="phone" value="{{$client->phone}}">
+            <label class="mt-2">Description</label>
+            <textarea name="description" class="form-control">{{ $client->description }}</textarea>
+            <label class="mt-2">sub_Description</label>
+            <textarea name="sub_description" class="form-control">{{ $client->sub_description}}</textarea>
+            <label class="mt-2">image</label>
+            <input type="file" class="form-control" name="image">
+            <label>Previous Image</label>
+            <img src="{{ asset('upload') }}/{{ $client->image }}" height="50" weight="50"style="margin-top: 0.5rem;" alt="Image">
+            <br>
+            <button class="btn btn-primary mt-2">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
