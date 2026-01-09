@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 
 @section('title','feature')
-@section('content')
+@section('')
     <h1>Feature of the blog</h1>
     <p>Lotione placeat facilis earum quas, porro quod reiia quidem tempora pariatur, nesciunt autem perspiciatis praesentium doloremque laudantium ea enim cupiditate architecto fugit dicta! Dolore, consectetur.</p>
     <div class="modal" tabindex="-1">

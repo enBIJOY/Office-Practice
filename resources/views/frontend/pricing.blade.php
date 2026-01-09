@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 
 @section('title','pricing')
-@section('content')
+@section('')
     <h1>See The Pricing</h1>
     <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum, dolore inventore iste suscipit numquam quisquam blanditiis enim rem non doloremque rerum qui, saepe fugit.</div>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, eos earum? Dignissimos itaque nostrum quisquam esse illo ex hic consequuntur minus eum et qui nemo iure, eos dolorem repellat aliquam eius facere deleniti distinctio maxime maiores animi sequi rem? Ratione placeat facilis earum quas, porro quod reiciendis ipsam vitae laboriosam quam odit mollitia quidem tempora pariatur, nesciunt autem perspiciatis praesentium doloremque laudantium ea enim cupiditate architecto fugit dicta! Dolore, consectetur.</p>

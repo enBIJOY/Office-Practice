@@ -12,7 +12,7 @@
 
         <main>
             <!-- This is where the dynamic body content will be injected -->
-            @yield('content')
+            @yield('')
         </main>
 
         <!-- Include the footer partial -->
