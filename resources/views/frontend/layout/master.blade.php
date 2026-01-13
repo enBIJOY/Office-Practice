@@ -9,7 +9,7 @@
     <body>
     <!-- Include the header partial -->
         @include('frontend.layout.header')
-
+        <!-- {{getAllUsers()}} -->
         <main>
             <!-- This is where the dynamic body content will be injected -->
             @yield('')
