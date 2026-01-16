@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Models\User;
 use Hash;
+use App\Mail\NewUserWelcomeMail;
+use Illuminate\Support\Facades\Mail;
 
 
 class AuthController extends Controller
@@ -47,8 +49,10 @@ class AuthController extends Controller
 
         
         $user->save();
+
+        $mail = Mail::to($user->email)->send(new NewUserWelcomeMail($user));
         
-        if($user){
+        if($user && $mail){
             return view("auth.registration-success")->with('Success','Great! registration-success');
         }
         return redirect("auth.register")->withSuccess('Try Again Register');
